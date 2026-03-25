@@ -9,6 +9,7 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "clan-core/nixpkgs";
     };
+    import-tree.url = "github:vic/import-tree";
 
     clan-core = {
       url = "https://git.clan.lol/clan/clan-core/archive/main.tar.gz";
@@ -31,7 +32,7 @@
       imports = with inputs; [
         flake-parts.flakeModules.modules
         clan-core.flakeModules.default
-        ./modules/flake-module.nix
+        ./devShell.nix
       ];
 
       clan = {
